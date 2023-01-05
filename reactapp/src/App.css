@@ -1,0 +1,157 @@
+header{
+  background-color:#1C2941;
+  padding: 20px 2rem;
+  align-items: center;
+}
+header a{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  
+}
+.left a{
+  
+  font-size: 23px;
+}
+.right a{
+  margin-left: 10px;
+}
+.about p{
+  background-color:#afb8c91f;
+  padding: 3rem 7rem;
+  margin-bottom: 0px !important;
+}
+
+.app {
+font-family: sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 20px;
+height: 100vh;
+font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+background-color: #f8f9fd;
+}
+
+input[type="text"],
+input[type="password"] {
+height: 30px;
+border: 1px solid rgba(0, 0, 0, 0.2);
+border-radius: 50px;
+}
+
+input[type="submit"] {
+margin-top: 10px;
+cursor: pointer;
+font-size: 17px;
+background: #1C2941;
+border: 1px solid #1C2941;
+color: #fff;
+padding: 10px 40px;
+border-radius: 50px;
+}
+
+input[type="submit"]:hover {
+background: #fff;
+color: #1C2941;
+font-weight: bold;
+}
+
+.button-container {
+display: flex;
+justify-content: center;
+}
+
+.login-form {
+background-color: white;
+padding: 2rem;
+box-shadow: 0 4px 8px 0 rgba(76, 34, 173, 0.2), 0 6px 20px 0 rgba(117, 54, 244, 0.19);
+}
+
+.list-container {
+display: flex;
+}
+
+.error {
+color: red;
+font-size: 12px;
+}
+
+.title {
+font-size: 25px;
+margin-bottom: 20px;
+}
+.avatar{
+width: 25%;
+}
+.avatar img{
+width: 100%;
+}
+.input-container {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin: 10px;
+}
+.cards{
+width: 33%;
+justify-content: space-between;
+}
+.cards img{
+width: 100%;
+}
+header{
+background-color: #343A40;
+}
+.all-card{
+justify-content: space-evenly;
+margin: 1rem auto;
+flex-wrap: wrap;
+}
+.links{
+display: flex;
+
+}
+.links .left a{
+font-size: 40px;
+margin: 2px auto;
+font-weight: bold;
+
+}
+.links .right a{
+font-size: 16px;
+font-weight: normal;
+margin-left: 15px;
+}
+.links a{
+text-decoration: none;
+color: rgb(255, 255, 255);
+
+}
+
+.singlecard{
+margin: 1.5rem auto;
+}
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+.gradient-form {
+  height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+}
+}
