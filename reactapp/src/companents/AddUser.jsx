@@ -28,7 +28,7 @@ const AddUser = () => {
                 username: username
             }
             await axios.post('http://localhost:3015/posts', newUser)
-            navigate("/admin")
+            navigate("/adminpanel")
 
         }
      addUser();

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-
+import Register from "../companents/Register";
+import AddUser from "../companents/AddUser";
 
 function AdminPanel() {
   const [users, setUsers] = useState([]);
@@ -9,20 +10,15 @@ function AdminPanel() {
   const { id } = useParams();
 
   useEffect(() => {
-    DeleteUsers();
+    GetUsers();
   }, []);
 
-  const DeleteUsers = async () => {
-    const result = await axios.get("https://www.melivecode.com/api/users");
+  const GetUsers = async () => {
+    const result = await axios.get("http://localhost:3015/posts");
     setUsers(result.data);
   };
 
-  const deleteUser = async (id) => {
-    const deleteUser = async () =>{
-    await axios.delete(`https://www.melivecode.com/api/users/${id}`);
-    }
-    deleteUser();
-  };
+
 
   return (
     <div className="container">
@@ -48,12 +44,10 @@ function AdminPanel() {
                 <td>{user.fname} </td>
                 <td>{user.username}</td>
                 <td>
-                  <button
-                    className="btn btn-danger mx-2"
-                    onClick={() => deleteUser(user.id)}
-                  >
-                    Delete
-                  </button>
+                <button onClick={async()=>{
+             await axios.delete (`http://localhost:3015/posts/${user.id}`)
+             GetUsers();}}
+           className='btn btn-danger' >Delete</button>
                   <Link
                     className="btn btn-outline-primary mx-2"
                     to={`/edituser/${user.id}`}
@@ -71,4 +65,3 @@ function AdminPanel() {
   );
 }
 export default AdminPanel
-

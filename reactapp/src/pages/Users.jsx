@@ -1,32 +1,24 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
+import axios from 'axios'
+import { useEffect,useState } from 'react'
+import HashLoader from "react-spinners/HashLoader";
+import UserList from './UserList';
+const Users = () => {
 
-
-const Users = (props) => {
+    const [users,setUsers]=useState([])
+   
+    useEffect(()=>{
+        const getUsers=async()=>{
+            const response=await axios.get('http://localhost:3015/posts')
+            console.log(response.data);   
+            setUsers(response.data)
+       
+        }
+        getUsers();
+    },[])
   return (
-    
-    <div className='d-flex all-card'>
-      {
-         props.ulist.map(u=>{
-            return(
-                    <div className='cards' key={u.id}>
-                        <Card className='singlecard' style={{ width: '19rem' ,display:'flex'}}>
-                      <Card.Img variant="top" src={u.avatar} />
-                      <Card.Body>
-                        <Card.Title>{u.fname} {u.lname}</Card.Title>
-                        <Card.Text>
-                         {u.username}
-                           </Card.Text>
-                         </Card.Body>
-                    </Card>
-                    </div>
-                  
-            )
-         })
-    
-      }
-      </div>
-  )
+   <UserList ulist={users}/>  
+
+)
 }
 
 export default Users;
